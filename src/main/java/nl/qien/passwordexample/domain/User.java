@@ -26,15 +26,17 @@ public class User {
         return username;
     }
 
-    public void setUsername(final String username) {
+    public User setUsername(final String username) {
         this.username = username;
+        return this;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(final String password) {
+    public User setPassword(final String password) {
         this.password = password;
+        return this;
     }
 }
