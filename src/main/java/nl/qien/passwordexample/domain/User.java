@@ -5,6 +5,8 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @EntityListeners(UserUpdateListner.class)
@@ -14,8 +16,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
+    @NotNull
+    @Size(min=3, message="Username should have at least 2 characters")
     private String username;
     
+    @NotNull
+    @Size(min=2, message="Password should have at least 2 characters")
     private String password;
     
 	public long getId() {
